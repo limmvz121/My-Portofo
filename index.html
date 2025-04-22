@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIMMVZ - Hostinger Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      scroll-behavior: smooth;
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.3);
+      animation: fadeIn 2s ease;
+    }
+    header h1 {
+      font-size: 3rem;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+      animation: slideUp 1s ease;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00c6ff;
+    }
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.2);
+      margin-top: 3rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LIMMVZ - Hostinger</h1>
+    <p>Welcome to my portfolio</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm LIMMVZ, a passionate digital creator hosted on Hostinger. I enjoy building clean and animated web experiences that bring ideas to life online.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript Basics</li>
+      <li>Web Design & UX</li>
+      <li>Hosting with Hostinger</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>You can reach me via email: <a href="mailto:limmvz@example.com" style="color:#00c6ff;">limmvz@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 LIMMVZ. All rights reserved.</p>
+  </footer>
+</body>
+</html>
