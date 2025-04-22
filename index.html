@@ -16,19 +16,13 @@
       background: linear-gradient(to right, #141e30, #243b55);
       color: white;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
     header {
       padding: 2rem;
       text-align: center;
       background-color: rgba(0, 0, 0, 0.3);
       animation: fadeIn 2s ease;
-    }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid #00c6ff;
-      margin-bottom: 1rem;
     }
     header h1 {
       font-size: 3rem;
@@ -53,18 +47,24 @@
     }
     section {
       padding: 4rem 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
-      animation: slideUp 1s ease;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
       color: #00c6ff;
     }
     p, li {
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.8;
     }
     ul {
       list-style-type: square;
@@ -81,26 +81,14 @@
       margin-bottom: 0.5rem;
       color: #66e0ff;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    input, textarea {
-      padding: 0.8rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    input[type="submit"] {
-      background-color: #00c6ff;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    input[type="submit"]:hover {
-      background-color: #66e0ff;
+    .profile-pic {
+      display: block;
+      margin: 20px auto;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #00c6ff;
     }
     footer {
       text-align: center;
@@ -112,15 +100,10 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://via.placeholder.com/120" alt="LIMMVZ Profile Photo">
     <h1>LIMMVZ - Hostinger</h1>
     <p>Digital Creator | Web Enthusiast | Hostinger Powered</p>
     <nav>
@@ -130,6 +113,8 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
+
+  <img src="https://i.pravatar.cc/150?img=3" alt="LIMMVZ Photo" class="profile-pic" />
 
   <section id="about">
     <h2>About Me</h2>
@@ -167,13 +152,7 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>I'd love to hear from you! Feel free to reach out via email or send a message directly through the form below.</p>
-    <form action="#" method="post">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <input type="submit" value="Send Message">
-    </form>
+    <p>I'd love to hear from you! Feel free to reach out via email or connect with me on social media.</p>
     <p>Email: <a href="mailto:limmvz@example.com" style="color:#00c6ff;">limmvz@example.com</a></p>
     <p>Instagram: <a href="https://instagram.com/limmvz" target="_blank" style="color:#00c6ff;">@limmvz</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/limmvz" target="_blank" style="color:#00c6ff;">linkedin.com/in/limmvz</a></p>
@@ -182,5 +161,20 @@
   <footer>
     <p>&copy; 2025 LIMMVZ. Built with passion and hosted by Hostinger.</p>
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
