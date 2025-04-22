@@ -23,8 +23,33 @@
       background-color: rgba(0, 0, 0, 0.3);
       animation: fadeIn 2s ease;
     }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #00c6ff;
+      margin-bottom: 1rem;
+    }
     header h1 {
       font-size: 3rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #00c6ff;
+    }
+    nav {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #00c6ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #66e0ff;
     }
     section {
       padding: 4rem 2rem;
@@ -45,6 +70,38 @@
       list-style-type: square;
       padding-left: 1.5rem;
     }
+    .project {
+      background-color: rgba(255,255,255,0.05);
+      border-left: 4px solid #00c6ff;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .project h3 {
+      margin-bottom: 0.5rem;
+      color: #66e0ff;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    input, textarea {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    input[type="submit"] {
+      background-color: #00c6ff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #66e0ff;
+    }
     footer {
       text-align: center;
       padding: 2rem;
@@ -63,32 +120,67 @@
 </head>
 <body>
   <header>
+    <img src="https://via.placeholder.com/120" alt="LIMMVZ Profile Photo">
     <h1>LIMMVZ - Hostinger</h1>
-    <p>Welcome to my portfolio</p>
+    <p>Digital Creator | Web Enthusiast | Hostinger Powered</p>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I'm LIMMVZ, a passionate digital creator hosted on Hostinger. I enjoy building clean and animated web experiences that bring ideas to life online.</p>
+    <p>Hi there! I'm LIMMVZ, a passionate web enthusiast who loves turning ideas into beautiful websites. With a strong foundation in front-end design and hosting through Hostinger, I specialize in crafting sleek, responsive, and engaging websites that stand out. I believe that a great website tells a story, and I’m here to help bring those stories to life online.</p>
+    <p>Whether you're launching a personal blog, business page, or online portfolio — I'm here to help you build something amazing!</p>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li>HTML & CSS</li>
-      <li>JavaScript Basics</li>
-      <li>Web Design & UX</li>
-      <li>Hosting with Hostinger</li>
+      <li>Semantic HTML5 & Modern CSS3</li>
+      <li>JavaScript (basic DOM interactions)</li>
+      <li>Responsive Design (Mobile-first)</li>
+      <li>Animation with CSS and keyframes</li>
+      <li>Web Hosting with Hostinger</li>
+      <li>Basic SEO & Performance Optimization</li>
     </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Simple Portfolio Website</h3>
+      <p>A clean and minimal personal portfolio page hosted on Hostinger showcasing my skills and design style.</p>
+    </div>
+    <div class="project">
+      <h3>Landing Page for Online Course</h3>
+      <p>Designed a responsive and animated landing page for an online course. Integrated with a newsletter sign-up and mobile-friendly layout.</p>
+    </div>
+    <div class="project">
+      <h3>Coming Soon Template</h3>
+      <p>A countdown timer and subscription-ready “Coming Soon” page built entirely in HTML/CSS/JS.</p>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>You can reach me via email: <a href="mailto:limmvz@example.com" style="color:#00c6ff;">limmvz@example.com</a></p>
+    <p>I'd love to hear from you! Feel free to reach out via email or send a message directly through the form below.</p>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <input type="submit" value="Send Message">
+    </form>
+    <p>Email: <a href="mailto:limmvz@example.com" style="color:#00c6ff;">limmvz@example.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/limmvz" target="_blank" style="color:#00c6ff;">@limmvz</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/limmvz" target="_blank" style="color:#00c6ff;">linkedin.com/in/limmvz</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 LIMMVZ. All rights reserved.</p>
+    <p>&copy; 2025 LIMMVZ. Built with passion and hosted by Hostinger.</p>
   </footer>
 </body>
 </html>
